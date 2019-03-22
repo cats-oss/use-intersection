@@ -88,5 +88,10 @@
     "testMatch": [
       "**/test/**/*.test.ts"
     ]
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "yarn format"
+    }
   }
 }
