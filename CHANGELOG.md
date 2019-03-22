@@ -4,7 +4,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## 0.0.1 (2019-03-22)
 
-
 ### Features
 
-* Hello `use-intersection` :tada: ([484d234](https://github.com/cats-oss/use-intersection/commit/484d234))
+- Hello `use-intersection` :tada: ([484d234](https://github.com/cats-oss/use-intersection/commit/484d234))
