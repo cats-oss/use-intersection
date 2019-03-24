@@ -7,6 +7,7 @@ export type IntersectionOptions = {
   root?: React.RefObject<Element>;
   rootMargin?: string;
   threshold?: number | number[];
+  once?: boolean;
   defaultIntersecting?: boolean;
 };
 
@@ -15,7 +16,7 @@ export const useIntersection = (
   options: IntersectionOptions = {},
   callback?: IntersectionChangeHandler,
 ) => {
-  const { defaultIntersecting, ...opts } = options;
+  const { defaultIntersecting, once, ...opts } = options;
   const optsRef = useRef(opts);
   const [intersecting, setIntersecting] = useState(defaultIntersecting === true);
 
@@ -33,8 +34,13 @@ export const useIntersection = (
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIntersecting(entry.isIntersecting);
+
         if (callback != null) {
           callback(entry);
+        }
+
+        if (once && entry.isIntersecting && ref.current != null) {
+          observer.unobserve(ref.current);
         }
       },
       {
@@ -46,7 +52,7 @@ export const useIntersection = (
     observer.observe(ref.current);
 
     return () => {
-      if (ref.current != null) {
+      if (!once && ref.current != null) {
         observer.unobserve(ref.current);
       }
     };

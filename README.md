@@ -57,6 +57,25 @@ const Component: React.FC = () => {
 };
 ```
 
+### Lazy Image
+
+This is an example of an Image component that delays loading.
+
+```typescript
+import * as React from 'react';
+import { useIntersection } from 'use-intersection';
+
+const Component: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => {
+  const target = React.useRef<HTMLDivElement>(null);
+  const intersected = useIntersection(target, {
+    rootMargin: '250px',
+    once: true,
+  });
+
+  return intersected ? <img {...props} /> : <span />;
+};
+```
+
 ## Browser support
 
 Supports modern web browser.
@@ -88,10 +107,12 @@ The following resources will help you.
 
 ---
 
+### `useIntersection`
+
 `useIntersection` is returns a flag whether the target intersects.
 
 ```typescript
-useIntersection(
+const useIntersection = (
   ref: React.RefObject<Element>,
   options: IntersectionOptions = {},
   callback?: IntersectionChangeHandler,
@@ -101,18 +122,19 @@ useIntersection(
 ### `options: IntersectionOptions`
 
 ```typescript
-{
+type IntersectionOptions = {
   root?: React.RefObject<Element>;
   rootMargin?: string;
   threshold?: number | number[];
+  once?: boolean;
   defaultIntersecting?: boolean;
-}
+};
 ```
 
 ### `callback: IntersectionChangeHandler`
 
 ```typescript
-(entry: IntersectionObserverEntry) => void
+type IntersectionChangeHandler = (entry: IntersectionObserverEntry) => void;
 ```
 
 ## CHANGELOG

@@ -95,8 +95,32 @@ const WithRoot: React.FC = () => {
   );
 };
 
+const WithOnce: React.FC = () => {
+  const target = React.useRef<HTMLDivElement>(null);
+  const intersected = useIntersection(
+    target,
+    {
+      once: true,
+    },
+    action('onChange'),
+  );
+
+  const empty = <Empty intersecting={intersected} />;
+
+  return (
+    <>
+      {empty}
+      <div ref={target}>
+        <Text intersecting={intersected} />
+      </div>
+      {empty}
+    </>
+  );
+};
+
 storiesOf('useIntersection', module)
   .addDecorator(withKnobs)
   .add('overview', () => <Overview />)
   .add('with threshold (0.8)', () => <WithThreshold />)
-  .add('with root element and rootMargin (100px)', () => <WithRoot />);
+  .add('with root element and rootMargin (100px)', () => <WithRoot />)
+  .add('with once', () => <WithOnce />);
