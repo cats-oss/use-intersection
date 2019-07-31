@@ -1743,10 +1743,10 @@
   resolved "https://registry.yarnpkg.com/@types/storybook__addon-actions/-/storybook__addon-actions-3.4.2.tgz#1d08689cc3259269ddb3479a2307c9d16944309e"
   integrity sha512-CWxGz2pXav9PHcwrtXmkuH+xJL7sAu2AmIGEbkdT3Xs5jzBPZUEDEN//ZF7o6IOPP/tdXU37K1hrVMt9TDO0Bw==
 
-"@types/storybook__addon-knobs@4.0.4":
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-knobs/-/storybook__addon-knobs-4.0.4.tgz#66bd835a086a8d881013a09386da65270713c3a0"
-  integrity sha512-dN7sRS7pjLHVRY+Cnk7G94kfc7LZQAzEGnqOY0XG9ZdKse25tAKlAyidI7rjxwJ54v1CWswP8p+X4lBznV3cRw==
+"@types/storybook__addon-knobs@5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@types/storybook__addon-knobs/-/storybook__addon-knobs-5.0.3.tgz#a6366877d7b21f9fa2cc9eb23650304388393350"
+  integrity sha512-NnSOu4ajk4kL1e1eRe9zzyspIghgFu8B9ELyrAl1jF/nJE26YK2oDTi7qr+k/+X33rNaYFo6e7+lsEqeI3MLXg==
   dependencies:
     "@types/react" "*"
     "@types/storybook__react" "*"
