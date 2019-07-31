@@ -48,10 +48,10 @@
     "shallowequal": "^1.1.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "5.0.3",
-    "@storybook/addon-knobs": "5.0.3",
-    "@storybook/addon-options": "5.0.3",
-    "@storybook/react": "5.0.3",
+    "@storybook/addon-actions": "5.1.10",
+    "@storybook/addon-knobs": "5.1.10",
+    "@storybook/addon-options": "5.1.10",
+    "@storybook/react": "5.1.10",
     "@types/expect-puppeteer": "3.3.1",
     "@types/jest-environment-puppeteer": "4.0.0",
     "@types/puppeteer": "1.12.3",
