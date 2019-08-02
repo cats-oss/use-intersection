@@ -20,11 +20,11 @@ $ yarn add use-intersection
 This is the simplest example.
 
 ```typescript
-import * as React from 'react';
+import React, { useRef } from 'react';
 import { useIntersection } from 'use-intersection';
 
 const Component: React.FC = () => {
-  const target = React.useRef<HTMLDivElement>(null);
+  const target = useRef<HTMLDivElement>(null);
   const intersecting = useIntersection(target);
 
   return <div ref={target}>{intersecting ? 'visible' : 'invisible'}</div>;
@@ -36,12 +36,12 @@ const Component: React.FC = () => {
 This is an example of using scrollable elements other than Viewport.
 
 ```typescript
-import * as React from 'react';
+import React, { useRef } from 'react';
 import { useIntersection } from 'use-intersection';
 
 const Component: React.FC = () => {
-  const root = React.useRef<HTMLDivElement>(null);
-  const target = React.useRef<HTMLDivElement>(null);
+  const root = useRef<HTMLDivElement>(null);
+  const target = useRef<HTMLDivElement>(null);
   const intersecting = useIntersection(target, {
     root,
     rootMargin: '100px',
@@ -62,17 +62,17 @@ const Component: React.FC = () => {
 This is an example of an Image component that delays loading.
 
 ```typescript
-import * as React from 'react';
+import React, { useRef } from 'react';
 import { useIntersection } from 'use-intersection';
 
-const Component: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => {
-  const target = React.useRef<HTMLDivElement>(null);
+const LazyImage: React.FC<React.ComponentProps<'img'>> = (props) => {
+  const target = useRef<HTMLSpanElement>(null);
   const intersected = useIntersection(target, {
     rootMargin: '250px',
     once: true,
   });
 
-  return intersected ? <img {...props} /> : <span />;
+  return <span ref={target}>{intersected && <img {...props} />}</span>;
 };
 ```
 
