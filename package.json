@@ -65,7 +65,7 @@
     "eslint-config-prettier": "4.3.0",
     "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-react": "7.12.4",
-    "fork-ts-checker-webpack-plugin": "1.0.0",
+    "fork-ts-checker-webpack-plugin": "1.5.0",
     "gh-pages": "2.0.1",
     "jest": "24.5.0",
     "jest-puppeteer": "4.1.0",
