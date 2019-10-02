@@ -2202,10 +2202,10 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/expect-puppeteer@3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@types/expect-puppeteer/-/expect-puppeteer-3.3.1.tgz#46e5944bf425b86ea13a563c7c8b86901414988d"
-  integrity sha512-3raSnf28NelDtv0ksvQPZs410taJZ4d70vA8sVzmbRPV04fpmQm9/BOxUCloETD/ZI1EXRpv0pzOQKhPTbm4jg==
+"@types/expect-puppeteer@3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@types/expect-puppeteer/-/expect-puppeteer-3.3.2.tgz#246f91e5907ddcfabc2f146408a1f99c8d24c3b5"
+  integrity sha512-WRxRC9kn+ItWL+Ar/oRHwkdjM50ujJbyhrYknwZu2vetE28Eh9RqurAgn1jtyFpfi9bL3pXDUQSrXtDENmda2w==
   dependencies:
     "@types/jest" "*"
     "@types/puppeteer" "*"
