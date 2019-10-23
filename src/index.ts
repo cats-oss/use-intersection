@@ -31,10 +31,12 @@ export const useIntersection = (
     if (target == null) {
       return;
     }
+
     const element = target instanceof Element ? target : target.current;
     if (element == null) {
       return;
     }
+
     if (once && intersectedRef.current) {
       return;
     }
