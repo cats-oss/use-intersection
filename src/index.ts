@@ -12,13 +12,14 @@ export type IntersectionOptions = {
 };
 
 export const useIntersection = (
-  ref: React.RefObject<Element>,
+  target: React.RefObject<Element> | Element | null,
   options: IntersectionOptions = {},
   callback?: IntersectionChangeHandler,
 ) => {
   const { defaultIntersecting, once, ...opts } = options;
   const optsRef = useRef(opts);
   const [intersecting, setIntersecting] = useState(defaultIntersecting === true);
+  const intersectedRef = useRef(false);
 
   useEffect(() => {
     if (!shallowEqual(optsRef.current, opts)) {
@@ -27,7 +28,14 @@ export const useIntersection = (
   });
 
   useEffect(() => {
-    if (ref.current == null) {
+    if (target == null) {
+      return;
+    }
+    const element = target instanceof Element ? target : target.current;
+    if (element == null) {
+      return;
+    }
+    if (once && intersectedRef.current) {
       return;
     }
 
@@ -39,8 +47,12 @@ export const useIntersection = (
           callback(entry);
         }
 
-        if (once && entry.isIntersecting && ref.current != null) {
-          observer.unobserve(ref.current);
+        if (entry.isIntersecting) {
+          intersectedRef.current = true;
+        }
+
+        if (once && entry.isIntersecting && element != null) {
+          observer.unobserve(element);
         }
       },
       {
@@ -49,14 +61,18 @@ export const useIntersection = (
       },
     );
 
-    observer.observe(ref.current);
+    observer.observe(element);
 
     return () => {
-      if (!once && ref.current != null) {
-        observer.unobserve(ref.current);
+      if (once && intersectedRef.current) {
+        return;
+      }
+
+      if (element != null) {
+        observer.unobserve(element);
       }
     };
-  }, [optsRef.current]);
+  }, [optsRef.current, target]);
 
   return intersecting;
 };
