@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "incremental": false,
     "target": "es5",
     "module": "commonjs",
     "lib": ["es2018", "dom"],
@@ -12,7 +13,7 @@
     "sourceMap": false,
     "outDir": "lib",
     "rootDir": "src",
-    "composite": true,
+    "composite": false,
     "pretty": true,
     "removeComments": false,
     "noEmit": false,

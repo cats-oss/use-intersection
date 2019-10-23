@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import { withKnobs, number, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import * as React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useIntersection } from '../';
 
 type IntersectProps = { intersecting: boolean };
@@ -19,7 +19,7 @@ const Text: React.FC<IntersectProps> = ({ intersecting }) => (
 );
 
 const Overview: React.FC = () => {
-  const target = React.useRef<HTMLDivElement>(null);
+  const target = useRef<HTMLDivElement>(null);
   const intersecting = useIntersection(
     target,
     {
@@ -43,7 +43,7 @@ const Overview: React.FC = () => {
 };
 
 const WithThreshold: React.FC = () => {
-  const target = React.useRef<HTMLDivElement>(null);
+  const target = useRef<HTMLDivElement>(null);
   const intersecting = useIntersection(
     target,
     {
@@ -66,8 +66,8 @@ const WithThreshold: React.FC = () => {
 };
 
 const WithRoot: React.FC = () => {
-  const root = React.useRef<HTMLDivElement>(null);
-  const target = React.useRef<HTMLDivElement>(null);
+  const root = useRef<HTMLDivElement>(null);
+  const target = useRef<HTMLDivElement>(null);
   const intersecting = useIntersection(
     target,
     {
@@ -96,7 +96,7 @@ const WithRoot: React.FC = () => {
 };
 
 const WithOnce: React.FC = () => {
-  const target = React.useRef<HTMLDivElement>(null);
+  const target = useRef<HTMLDivElement>(null);
   const intersected = useIntersection(
     target,
     {
@@ -119,10 +119,10 @@ const WithOnce: React.FC = () => {
 };
 
 const WithElement: React.FC = () => {
-  const [target, setTarget] = React.useState<Element | null>(null);
+  const [target, setTarget] = useState<Element | null>(null);
   const intersected = useIntersection(target, {}, action('onChange'));
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTarget(document.getElementById('target'));
   }, []);
 

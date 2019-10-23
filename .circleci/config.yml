@@ -24,7 +24,7 @@ jobs:
     steps:
       - checkout
       - *yarn_restore_cache
-      - run: yarn --pure-lockfile
+      - run: yarn --frozen-lockfile
       - *yarn_save_cache
       - run: yarn build
       - run: yarn test
