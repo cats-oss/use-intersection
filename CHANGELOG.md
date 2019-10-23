@@ -1,6 +1,13 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.2.0](https://github.com/cats-oss/use-intersection/compare/v0.1.0...v0.2.0) (2019-10-23)
+
+### Features
+
+- support Element as target param ([1981df0](https://github.com/cats-oss/use-intersection/commit/1981df0285e72f0b66f453d1dd74a3d9f92e4e43))
+- Update dependencies ([eb4415e](https://github.com/cats-oss/use-intersection/commit/eb4415ece197c7a5cb4e769dfff9cf8c756f705c))
 
 # [0.1.0](https://github.com/cats-oss/use-intersection/compare/v0.0.2...v0.1.0) (2019-03-24)
 
