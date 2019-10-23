@@ -113,7 +113,7 @@ The following resources will help you.
 
 ```typescript
 const useIntersection = (
-  ref: React.RefObject<Element>,
+  target: React.RefObject<Element> | Element | null,
   options: IntersectionOptions = {},
   callback?: IntersectionChangeHandler,
 ) => boolean;
