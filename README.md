@@ -109,7 +109,7 @@ The following resources will help you.
 
 ### `useIntersection`
 
-`useIntersection` is returns a flag whether the target intersects.
+`useIntersection` returns a flag whether the target intersects.
 
 ```typescript
 const useIntersection = (
