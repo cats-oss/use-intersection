@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/cats-oss/use-intersection/compare/v0.2.0...v0.2.1) (2020-04-14)
+
+### Bug Fixes
+
+- use last entry instead of first entry ([d101e3e](https://github.com/cats-oss/use-intersection/commit/d101e3efa55d0bde2da70f2fecb44fb27e500341))
+
 ## [0.2.0](https://github.com/cats-oss/use-intersection/compare/v0.1.0...v0.2.0) (2019-10-23)
 
 ### Features
