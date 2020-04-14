@@ -42,7 +42,8 @@ export const useIntersection = (
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
+      (entries) => {
+        const entry = entries[entries.length - 1];
         setIntersecting(entry.isIntersecting);
 
         if (callback != null) {
