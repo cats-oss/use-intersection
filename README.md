@@ -48,7 +48,7 @@ const Component: React.FC = () => {
   });
 
   return (
-    <div style={{ overflow: 'hidden auto', height: 300 }}>
+    <div ref={root} style={{ overflow: 'hidden auto', height: 300 }}>
       {/* ... */}
       <div ref={target}>{intersecting ? 'visible' : 'invisible'}</div>
       {/* ... */}
