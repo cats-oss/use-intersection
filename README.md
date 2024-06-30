@@ -93,10 +93,10 @@ $ yarn add intersection-observer
 ### CDN
 
 ```html
-<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserverEntry%2CIntersectionObserver"></script>
+<script src="https://polyfill-fastly.io/v3/polyfill.min.js?features=IntersectionObserverEntry%2CIntersectionObserver"></script>
 ```
 
-> https://polyfill.io/v3/
+> https://polyfill-fastly.io/v3/
 
 ## API
 
